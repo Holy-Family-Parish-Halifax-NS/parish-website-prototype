@@ -113,7 +113,7 @@
 
   var footer =
     '<footer class="site-footer"><div class="kasavu"></div><div class="wrap cols">' +
-      '<div><h3>Holy Family Syro-Malabar Catholic Church</h3><p>' + icon("pin") + '<span>6032 Normandy Drive, Halifax, Nova Scotia<br>Eparchy of Mississauga</span></p>' +
+      '<div><h3>Holy Family Syro-Malabar Catholic Church</h3><p>' + icon("pin") + '<span>St. Stephen Church, 6032 Normandy Drive, Halifax, Nova Scotia<br>Eparchy of Mississauga</span></p>' +
       '<p class="small">' + icon("phone") + '<span>Contact details to be added once confirmed by the parish office.</span></p></div>' +
       '<div><h3>Visit</h3><ul><li><a href="' + root + 'mass.html">Mass times</a></li><li><a href="' + root + 'events.html">Events</a></li><li><a href="' + root + 'catechism.html">Catechism</a></li><li><a href="' + root + 'join.html">Register your family</a></li></ul></div>' +
       '<div><h3>Our community</h3><ul><li><a href="https://jy.holyfamilyhalifax.ca">Jesus Youth</a></li><li><a href="' + root + 'community.html">Associations and family units</a></li><li><a href="' + root + 'privacy.html">How we protect your information</a></li></ul></div>' +
@@ -261,6 +261,14 @@
     });
     apply();
   }
+
+  /* Share on WhatsApp: opens WhatsApp with the post title and its link */
+  document.querySelectorAll("[data-share]").forEach(function (a) {
+    var c = document.querySelector('link[rel="canonical"]');
+    var url = c ? c.href : location.href;
+    var h1 = document.querySelector("h1");
+    a.href = "https://wa.me/?text=" + encodeURIComponent((h1 ? h1.textContent.trim() + "\n" : "") + url);
+  });
 
   fillIcons();
 })();
