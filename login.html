@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sign in | Holy Family Parish, Halifax</title>
+<meta name="description" content="Sign in to your Holy Family parish account.">
+<meta property="og:title" content="Sign in | Holy Family Parish, Halifax">
+<meta property="og:description" content="Sign in to your Holy Family parish account.">
+<meta property="og:image" content="assets/img/parish-logo.jpg">
+<meta name="theme-color" content="#0C2242">
+<link rel="icon" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="account" data-root="">
+
+<main class="auth">
+  <div class="auth-card stack">
+    <img class="crest" src="assets/img/parish-logo.jpg" alt="" width="74" height="74">
+    <div style="text-align:center"><h1 style="font-size:1.7rem;margin:0">Welcome back</h1><p class="muted" style="margin:0">Sign in to your family's parish account</p></div>
+    <div class="demo-creds">
+      <b>Demo account for the council</b><br>
+      Email: <code>demo@holyfamilyhalifax.ca</code><br>
+      Password: <code>HolyFamily2026</code><br>
+      <button type="button" id="fill-demo" class="btn small gold" style="margin-top:.5rem">Fill in for me</button>
+    </div>
+    <form id="login-form" class="stack" novalidate>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+      <p class="error" id="login-error" role="alert"></p>
+      <button class="btn block" type="submit"><span data-icon="lock"></span>Sign in</button>
+    </form>
+    <div class="divider">or</div>
+    <button class="btn ghost block" type="button" data-toast="In the real website, we send a 6-digit code to your email or phone. No password needed."><span data-icon="phone"></span>Send me a sign-in code</button>
+    <p class="small muted" style="text-align:center;margin:0">New to the parish? <a href="join.html">Register your family</a></p>
+  </div>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

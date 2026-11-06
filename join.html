@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Register your family | Holy Family Parish, Halifax</title>
+<meta name="description" content="Register your family with Holy Family Parish, Halifax.">
+<meta property="og:title" content="Register your family | Holy Family Parish, Halifax">
+<meta property="og:description" content="Register your family with Holy Family Parish, Halifax.">
+<meta property="og:image" content="assets/img/parish-logo.jpg">
+<meta name="theme-color" content="#0C2242">
+<link rel="icon" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="join" data-root="">
+
+<main>
+  <section class="page-hero crimson">
+    <div class="wrap">
+      <h1>Register your family</h1>
+      <p>About 5 minutes. You can save and finish later, and update your details any time.</p>
+    </div>
+  </section>
+  <div class="kasavu" aria-hidden="true"></div>
+
+  <section class="section">
+    <div class="wrap" style="max-width:640px">
+      <ol class="steps"><li>Your account</li><li>Your family</li><li>Unit and groups</li><li>Privacy</li></ol>
+
+      <div class="step">
+        <h2>Create your account</h2>
+        <p class="muted" style="margin:0">One account for the whole family. Use the email you check most.</p>
+        <div class="field"><label for="j-name">Your full name</label><input id="j-name" type="text" autocomplete="name"></div>
+        <div class="field"><label for="j-email">Email</label><input id="j-email" type="email" autocomplete="email"></div>
+        <div class="field"><label for="j-phone">Mobile number</label><input id="j-phone" type="tel" autocomplete="tel"><span class="hint">For sign-in codes and urgent parish messages only.</span></div>
+        <div class="note-box"><b>No password to remember.</b> In the real website, you can sign in with a one-time code sent to your email or phone.</div>
+        <button class="btn block crimson" data-next type="button">Continue</button>
+      </div>
+
+      <div class="step">
+        <h2>Who is in your family?</h2>
+        <p class="muted" style="margin:0">Add everyone living in your home. Parents manage children's details.</p>
+        <ul class="menu-list">
+          <li class="row-item" style="display:flex;align-items:center;gap:.9rem;padding:.9rem 1rem"><span class="avatar" style="--c:var(--teal)">GV</span><span class="txt"><b>George Varghese</b><small>You. Adult</small></span><button class="btn small ghost" type="button" data-toast="In the real website, this opens the details for this person.">Edit</button></li>
+          <li class="row-item" style="display:flex;align-items:center;gap:.9rem;padding:.9rem 1rem"><span class="avatar" style="--c:var(--u-mariam)">LG</span><span class="txt"><b>Liya George</b><small>Spouse. Adult</small></span><button class="btn small ghost" type="button" data-toast="In the real website, this opens the details for this person.">Edit</button></li>
+          <li class="row-item" style="display:flex;align-items:center;gap:.9rem;padding:.9rem 1rem"><span class="avatar" style="--c:var(--gold)">AG</span><span class="txt"><b>Aaron George</b><small>Child</small></span><button class="btn small ghost" type="button" data-toast="In the real website, this opens the details for this person.">Edit</button></li>
+        </ul>
+        <button class="btn ghost block" type="button" data-toast="In the real website, this adds an adult or child. We ask only for what the parish needs."><span data-icon="plus"></span>Add a family member</button>
+        <div class="field"><label for="j-addr">Home address</label><input id="j-addr" type="text" autocomplete="street-address" placeholder="Street, city"><span class="hint">Used to place you in the right family unit.</span></div>
+        <div style="display:flex;gap:.6rem"><button class="btn ghost" data-prev type="button">Back</button><button class="btn crimson" style="flex:1" data-next type="button">Continue</button></div>
+      </div>
+
+      <div class="step">
+        <h2>Your family unit and groups</h2>
+        <div class="alert"><span class="badge-ico" data-icon="pin"></span><div><b>Suggested: St. Thomas unit</b><span class="small muted">Based on your address. You can change it.</span></div></div>
+        <div class="field"><label for="j-unit">Family unit</label>
+          <select id="j-unit"><option>St. Alphonsa</option><option>St. Chavara</option><option>St. Mariam Thresia</option><option>St. Mother Teresa</option><option selected>St. Thomas</option><option>St. Euphrasia</option><option>Not sure yet</option></select></div>
+        <fieldset class="card" style="display:grid;gap:.7rem;border:1px solid var(--line)">
+          <legend style="font-weight:500;padding:0 .3rem">Groups you're part of (optional)</legend>
+          <label class="check"><input type="checkbox"> Mathruvedi</label>
+          <label class="check"><input type="checkbox"> Pithruvedi</label>
+          <label class="check"><input type="checkbox"> SMYM</label>
+          <label class="check"><input type="checkbox" checked> Jesus Youth</label>
+          <label class="check"><input type="checkbox" checked> Catechism (children enrolled)</label>
+        </fieldset>
+        <div style="display:flex;gap:.6rem"><button class="btn ghost" data-prev type="button">Back</button><button class="btn crimson" style="flex:1" data-next type="button">Continue</button></div>
+      </div>
+
+      <div class="step">
+        <h2>Your privacy, your choice</h2>
+        <p class="muted" style="margin:0">Your details are used only by the parish, only for parish purposes. They are never sold or shared.</p>
+        <label class="check"><input type="checkbox" checked disabled> I agree that the parish keeps my family's details to stay in touch, plan parish life and issue tax receipts. <a href="privacy.html">How we protect your information</a></label>
+        <label class="check"><input type="checkbox"> Show the adults in my family in the members-only parish directory (names and unit only).</label>
+        <label class="check"><input type="checkbox" checked> Email me parish news and events. You can stop any time.</label>
+        <button class="btn block crimson" type="button" data-toast="In the real website, your registration goes to the parish office to confirm. You'll get a welcome email when it's approved."><span data-icon="check"></span>Register my family</button>
+        <button class="btn ghost" data-prev type="button">Back</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
