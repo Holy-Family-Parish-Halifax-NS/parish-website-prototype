@@ -482,3 +482,44 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--n
 .chip { white-space: nowrap; }
 .hero-text { min-height: 112px; }
 @media (min-width: 700px) { .hero-text { min-height: 176px; } }
+
+/* ===== Calm palette (v2): navy and kasavu gold lead; crimson only as a small accent.
+   Unit colours stay where they carry meaning: unit cards, avatars, filters, bars. ===== */
+.hero {
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(200, 150, 46, .16), transparent 55%),
+    var(--navy-deep);
+}
+.page-hero, .page-hero.crimson, .page-hero.teal { background: var(--navy-deep); }
+.member-hero { background: radial-gradient(100% 120% at 100% 0%, rgba(200, 150, 46, .22), transparent 55%), linear-gradient(135deg, var(--navy-deep), #1d4373); }
+
+/* Icon badges: one quiet style everywhere */
+.tile .dot, .notice-list .badge-ico, .assoc-item .badge-ico, .menu-list .badge-ico, .alert .badge-ico {
+  background: #F6EEDB; color: var(--navy);
+}
+.tile .dot .i, .badge-ico .i { width: 24px; height: 24px; }
+.tile:hover { border-color: var(--gold); }
+
+/* Events: white cards, navy date */
+.event-top { background: var(--paper); color: var(--ink); border-bottom: 1px solid var(--line); }
+.event-top h3 { color: var(--navy-deep); }
+.event-top small { opacity: 1; color: var(--muted); }
+.datebox { background: var(--navy); color: #fff; }
+
+/* Buttons: navy primary, gold highlight */
+.btn.crimson, .btn.teal { background: var(--navy); }
+.band { background: var(--navy); background-image: radial-gradient(80% 120% at 100% 0%, rgba(200, 150, 46, .35), transparent 60%); }
+.band .btn.light { background: var(--gold); color: var(--navy-deep); }
+
+.alert { background: #FBF5E6; border-color: #EBDDB8; }
+.stat { border-top-color: var(--gold); }
+.card[style*="border-top"] { border-top-color: var(--gold) !important; }
+.sacraments .chip { --c: var(--navy); }
+
+/* Small inline icons for headings and meta */
+.h-ico { color: var(--gold); margin-right: .45rem; vertical-align: -3px; }
+.h-ico .i { width: 22px; height: 22px; }
+.meta { display: inline-flex; align-items: center; gap: .3rem; }
+.meta .i { width: 16px; height: 16px; }
+.site-footer li a, .site-footer p { display: inline-flex; gap: .45rem; align-items: flex-start; }
+.site-footer .i { width: 18px; height: 18px; color: var(--gold-soft); margin-top: 3px; }
