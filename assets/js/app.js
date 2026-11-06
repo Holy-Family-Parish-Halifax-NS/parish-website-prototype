@@ -83,7 +83,7 @@
   var accountHref = signedIn() ? root + "account/index.html" : root + "login.html";
   var accountLabel = signedIn() ? "My account" : "Sign in";
 
-  var strip = '<div class="demo-strip"><strong>Prototype for the parish council.</strong> Sample data only. Buttons show what the real website would do.</div>';
+  var strip = '<div class="demo-strip"><strong>Prototype for the parish council.</strong> Announcements are real. Families, names and numbers are samples.</div>';
 
   var header =
     '<header class="site-header"><div class="wrap">' +
@@ -175,20 +175,36 @@
     var plan = { 0: [17, 0, "Sunday Holy Mass"], 2: [17, 0, "Holy Mass"], 3: [17, 0, "Holy Mass"], 4: [17, 0, "Holy Mass"], 5: [17, 0, "Holy Mass"], 6: [9, 0, "Holy Mass"] };
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var now = new Date();
+    // Dates with no Holy Mass (from the Sunday announcements)
+    var closed = [{ from: "2026-11-09", to: "2026-11-14", note: "No Holy Mass November 9 to 14 (priests' annual retreat)" }];
+    function ymd(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+    function closure(d) { var k = ymd(d); for (var c = 0; c < closed.length; c++) if (k >= closed[c].from && k <= closed[c].to) return closed[c]; return null; }
+    var skipped = null;
     function isLastSaturday(d) { var n = new Date(d); n.setDate(d.getDate() + 7); return d.getDay() === 6 && n.getMonth() !== d.getMonth(); }
-    for (var add = 0; add < 8; add++) {
+    for (var add = 0; add < 21; add++) {
       var d = new Date(now); d.setDate(now.getDate() + add);
       var p = plan[d.getDay()];
       if (!p || isLastSaturday(d)) continue;
+      var cl = closure(d); if (cl) { skipped = cl; continue; }
       var at = new Date(d); at.setHours(p[0], p[1], 0, 0);
       if (at > now) {
-        var when = add === 0 ? "Today" : add === 1 ? "Tomorrow" : days[d.getDay()];
+        var md = d.toLocaleDateString("en-CA", { month: "long", day: "numeric" });
+        var when = add === 0 ? "Today, " + days[d.getDay()] : add === 1 ? "Tomorrow, " + days[d.getDay()] : days[d.getDay()] + ", " + md;
         var h = p[0] % 12 || 12, ap = p[0] < 12 ? "AM" : "PM";
         document.getElementById("nm-time").textContent = h + ":" + String(p[1]).padStart(2, "0");
         document.getElementById("nm-ampm").textContent = ap;
-        document.getElementById("nm-when").textContent = when + ", " + days[d.getDay()];
+        document.getElementById("nm-when").textContent = when;
         document.getElementById("nm-label").textContent = p[2];
         break;
+      }
+    }
+    // Show the closure notice if one is coming up within two weeks
+    var noteEl = document.getElementById("nm-note");
+    if (noteEl) {
+      for (var a2 = 0; a2 < 14; a2++) {
+        var d2 = new Date(now); d2.setDate(now.getDate() + a2);
+        var c2 = closure(d2);
+        if (c2) { noteEl.innerHTML = icon("alert") + "<span>" + c2.note + "</span>"; noteEl.hidden = false; break; }
       }
     }
     var dn = document.getElementById("today-name");

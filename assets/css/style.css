@@ -523,3 +523,29 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--n
 .meta .i { width: 16px; height: 16px; }
 .site-footer li a, .site-footer p { display: inline-flex; gap: .45rem; align-items: flex-start; }
 .site-footer .i { width: 18px; height: 18px; color: var(--gold-soft); margin-top: 3px; }
+
+/* Sunday announcements bulletin */
+.bulletin { list-style: none; margin: 0; padding: 0; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md); counter-reset: ann; }
+.bulletin > li { display: grid; grid-template-columns: auto 1fr; gap: .9rem; padding: 1rem; counter-increment: ann; }
+.bulletin > li + li { border-top: 1px solid var(--line); }
+.bulletin .badge-ico { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: #F6EEDB; color: var(--navy); }
+.bulletin h3 { margin: 0 0 .15rem; font-size: 1.04rem; }
+.bulletin h3::before { content: counter(ann) ". "; color: var(--gold); }
+.bulletin p { margin: 0; color: var(--muted); font-size: .95rem; }
+.bulletin p + p { margin-top: .4rem; }
+.bulletin li.important { background: #FDF3F4; }
+.bulletin li.important .badge-ico { background: #F9DDE2; color: var(--crimson); }
+.sub-list { list-style: none; padding: 0; margin: .35rem 0 .4rem; display: grid; gap: .5rem; font-size: .95rem; color: var(--ink); }
+.sub-list .chip { margin-right: .35rem; }
+
+/* Event grid */
+.event-grid { display: grid; gap: .9rem; }
+@media (min-width: 700px) { .event-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .event-grid { grid-template-columns: repeat(3, 1fr); } }
+.event.closed .datebox { background: var(--crimson); }
+.event.closed .meta { color: var(--crimson); }
+
+/* Closure note on the Mass card */
+.mass-note { display: flex; gap: .55rem; align-items: flex-start; background: #FDF3F4; color: #8c1a31; border-radius: 12px; padding: .65rem .8rem; font-size: .92rem; font-weight: 500; }
+.mass-note .i { width: 20px; height: 20px; margin-top: 1px; }
+.mass-note[hidden] { display: none; }
